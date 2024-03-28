@@ -1,0 +1,121 @@
+#include <iostream>
+using namespace std;
+
+unsigned long long int power(int k){
+        int l = 1;
+        if (k==0){
+            return 1;
+        }
+        for (int i=1; i<=k; i++){
+            l*=2;
+        }
+        return l;
+    }
+unsigned long long int nonacci(unsigned int n){
+    if (n < 8){
+        return 0;}
+    if (n == 8){
+        return 0;
+    }
+    if ((n>=9)&&(n<=17)){
+        return power(n-9);
+    }
+    else{
+        int res = 0;
+        for (int i =0; i<(n-18); i++){
+            res += power(i);
+        }
+        return power(n) - 1 - res;
+    }
+}
+
+unsigned int sum_of_numbers(unsigned long long int n)
+{
+    unsigned int res = 0;
+    while (n)
+    {
+        res += n % 10;
+        n /= 10;
+    }
+    return res;
+}
+// ваша реализация функции
+
+int main()
+{
+    int n;
+    cin >> n;
+    cout << nonacci(n) << endl;
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+unsigned long long int step(int k){
+        int l = 1;
+        if (k==0){
+            return 1;
+        }
+        for (int i=1; i<=k; i++){
+            l*=16;
+        }
+        return l;
+    }
+unsigned long long int get_a_hexadecimal(){
+    int h = 0;
+    int i = 0;
+    char c;
+    do{
+        cin >> c;
+        if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F')){
+            if (c >= 'A' && c <= 'F'){
+                h += step(i)*((c - 'A') + 10);
+                i++;
+            }
+            else{
+                h += step(i)*(c - '0');
+                i++;
+            }
+        }
+    }while ((c!=' ') || (c!='\n'));
+}
+
+int main()
+{
+    cout << get_a_hexadecimal() << endl;
+    return 0;
+}
+Шестн сист
+#include <iostream>
+using namespace std;
+unsigned long long int get_a_hexadecimal(){
+    unsigned long long int h = 0;
+    int i = 0;
+    char c;
+    cin.get(c);
+    while ((c!= ' ') && (c!= '\n')){
+        if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'F')){
+            if ((c >= 'A') && (c <= 'F')){
+                h*=16;
+                h += ((c - 'A') + 10);
+                i++;
+            }
+            else{
+                h*=16;
+                h += (c - '0');
+                i++;
+            }
+        }
+        else{
+            return 0;
+        }
+        cin.get(c);
+    }
+    return h;
+}
+
+int main()
+{
+    cout << get_a_hexadecimal() << endl;
+    return 0;
+}

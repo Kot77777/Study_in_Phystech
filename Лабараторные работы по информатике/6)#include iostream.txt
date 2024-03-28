@@ -1,0 +1,384 @@
+1)#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "A simple problem." << endl;
+    return 0;
+}
+2)#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a, b;
+    cin >> a;
+    cin >> b;
+    cout << a+b << endl;
+    return 0;
+}
+3)#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a;
+    cin >> a;
+    if (a%13 == 0) {
+        cout << "Yes" << endl;
+    }
+    else {
+        cout << "No" << endl;
+    }
+    return 0;
+}
+4)#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cout << "+";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+5)#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, m, largest = 0, k, largest1;
+    cin >> n;
+    for(int i = 0; i < n; i++){
+        cin >> m;
+        if (m < 0){
+            k = m*(-1);
+        }
+        else{
+            k = m;
+        }
+        if (largest < 0){
+            largest1 = largest*(-1);
+        }
+        else{
+            largest1 = largest;
+        }
+        if (largest1 < k){
+            largest = m;
+        }
+    }
+    cout << largest;
+    return 0;
+}
+
+6)#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    for(int i = 0; i < n; i++){
+        for (int j = 0; j < m; j++){
+            if (((i == 0) || (j == 0) || (i == n-1) || (j == m-1)) == true) {
+                cout << "+";
+            }
+            else {
+                cout << " ";
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}
+5)#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, m, largest = 0, k, largest1;
+    cin >> n;
+    for(int i = 0; i < n; i++){
+        cin >> m;
+        if (m < 0){
+            k = m*(-1);
+        }
+        else{
+            k = m;
+        }
+        if (largest < 0){
+            largest1 = largest*(-1);
+        }
+        else{
+            largest1 = largest;
+        }
+        if (largest1 < k){
+            largest = m;
+        }
+    }
+    cout << largest;
+    return 0;
+}
+9)#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    for(int i = 1; i < n+1; i++){
+        for(int j = 1; j <= i; j++){
+            cout << "+";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+10)#include <iostream>
+using namespace std;
+
+int main()
+{
+    char n;
+    int count = 0;
+    cin >> n;
+    while (true){
+        if (((n == '1') || (n == '0'))){
+            if (n =='1'){
+               count++; 
+            }
+        }
+        else{
+            break;
+        }
+        cin >> n;
+    }
+    cout << count;
+    return 0;
+}
+11)#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, count = 0, count2 = 0, i = 1, k;
+    cin >> n;
+    while(true){
+        for (int j = 1; j <= i; j++){
+            if (i%j == 0){
+                count++;
+            }
+        }
+        if (count == 2){
+            count2++;
+            k = i;
+        }
+        count = 0;
+        i++;
+        if (count2 == n){
+            break;
+        }
+    }
+    cout << k;
+    return 0;
+}
+12)#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, k = 0;
+    cin >> n;
+    for (int i = 0; i <= ((n-1)/2); i++){
+        for (int j = 0; j <= (n-1); j++){
+            if ((j >= (n/2 - k)) && (j <= (n/2 + k))){
+                cout << "+";
+            }
+            else{
+                cout << " ";
+            }
+        }
+        k++;
+        cout << endl;
+    }
+    k = n/2 - 1;
+    for (int i = ((n-1)/2)+1; i <= n - 1; i++){
+        for (int j = 0; j <= (n-1); j++){
+            if ((j >= (n/2 - k)) && (j <= (n/2 + k))){
+                cout << "+";
+            }
+            else{
+                cout << " ";
+            }
+        }
+        k--;
+        cout << endl;
+    }
+    
+    return 0;
+}
+13)#include <iostream>
+using namespace std;
+
+int main()
+{
+    long long int n, k = 0, l = 1;
+    cin >> n;
+    while (n!= 0){
+        k = k + l*(n%2);
+        n = n/2;
+        l = l*10;
+    }
+    cout << k;
+    return 0;
+}
+14)#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, b, c, large, i;
+    cin >> a >> b >> c;
+    if ((a >= b)&&(a >= c)){
+        large = a;
+    }
+    else{
+        if ((b >= a)&&(b >= c)){
+            large = b;
+        }
+        else {
+            large = c;
+        }
+    }
+    i = large;
+    while (true){
+        if ((i%a == 0)&&(i%b == 0)&&(i%c == 0)){
+            break;
+        }
+        i = i + large;
+        }
+    cout << i;
+    return 0;
+}
+15)#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n, large = 0, k;
+    float a, b, c;
+    cin >> n;
+    for (int i = 0; i < n; i++){
+        cin >> a >> b >> c;
+        if (large <= (a*a*b*c)){
+            k = i;
+            large = a*a*b*c;
+        }
+    }
+    cout << k;
+    return 0;
+}
+18)#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x_SCV, x_drone, v_SCV, v_drone, x_minerals;
+    cin >> x_SCV >> x_drone >> v_SCV >> v_drone >> x_minerals;
+    x_SCV = x_SCV + v_SCV;
+    x_drone = x_drone + v_drone;
+    while ((x_SCV < x_minerals) and (x_drone < x_minerals)){
+        if ((x_drone - x_SCV) == 1){
+            x_drone = x_drone - v_drone;
+        }
+        if ((x_SCV - x_drone) == 1){
+            x_SCV = x_SCV - v_SCV;
+            }
+        x_SCV = x_SCV + v_SCV;
+        x_drone = x_drone + v_drone;
+    }
+    if ((x_drone >= x_minerals) and (x_SCV >= x_minerals)){
+        cout << "both";
+    }
+    else{
+        if ((x_drone >= x_minerals) and (x_SCV < x_minerals)){
+            cout << "drone";
+        }
+        else {
+            cout << "SCV";
+        }
+    }
+    return 0;
+}
+19)#include <iostream>
+using namespace std;
+
+int main()
+{
+    int Vv_max, Vv, Vm, L, K, N, Xv, Xm = 1, Xz;
+    cin >> Vv_max >> Vm >> L >> K >> N;
+    Xv = Xm + L + 1;
+    Xz = Xv + K + 1;
+    while ((Xv > Xm) and (Xv < Xz)){
+        N = N - 1;
+        if ((Vv_max - N) < 0){
+            Vv = 0;
+        }
+        else{
+            Vv = Vv_max - N;    
+        }
+        Xv = Xv + Vv;
+        Xm = Xm + Vm;
+    }
+    if (Xm >= Xv){
+        cout << 0;
+    }
+    else{
+        cout << N;
+    }
+    return 0;
+}
+
+
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+  
+int main() {
+    char a[25][25];
+    char name_1;
+    int n , m;
+    cin >> n >> m;
+    for(int i =0; i<n; i++){
+        for(int j = 0; j < m+1; j++){
+        cin.get(name_1);
+        if(name_1!='\n')
+        a[i][j] = name_1;
+        }
+    }
+    for(int i = m+2; i>0; i--){
+        for(int j =0; j < n; j++){
+        cout << a[j][i];
+    }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
