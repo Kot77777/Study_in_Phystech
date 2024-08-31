@@ -9,7 +9,7 @@ data, samplerate = sf.read(audio_path)
 plt.figure(figsize=(15, 5))
 plt.plot(data)
 plt.title('Звуковой сигнал')
-plt.xlim(0, 30000)
+plt.xlim(0, 2)
 plt.show()
 import numpy as np
 from scipy.signal import hilbert

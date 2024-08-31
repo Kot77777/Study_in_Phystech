@@ -19,20 +19,8 @@ public:
 
 int main()
 {
-    setlocale(LC_ALL, "Russian");
-    Weapon** sp;
-    sp = new Weapon*[3];
-    for(int i = 0; i < 3; i++)
-    {
-        sp[i] = new Weapon;
-        for (int j = 0; j < 3; j++)
-        {
-            Weapon k(6);
-            sp[i][j] = k;
-        }
-    }
-    Weapon n(5);
-    cout << n.Get();
+    string planets[11] = {"MERCURY", "VENUS", "EARTH", "MARS", "JUPITER", "SATURN", "URANUS", "NEPTUNE", "PLUTO", "MOON", "SUN"};
+    cout << planets[5];
 
     return 0;
 }

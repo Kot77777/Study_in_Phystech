@@ -14,7 +14,7 @@ resampled = resample(amplitude_envelope, int(amplitude_envelope.shape[0] * rate/
 resampled = ((resampled - min(resampled)) / (max(resampled) - min(resampled)))
 
 sync = np.array([0] * 4 + [1, 1, 0, 0] * 7 + [0] * 7, dtype=float)
-range_between = 2000;
+range_between = 2000
 peaks = [(0, 0)]
 shifted_signal = resampled - 0.5
 sync -= 0.5
@@ -24,6 +24,7 @@ for i in range(len(resampled) - len(sync)):
     edge = np.dot(sync, shifted_signal[i:i + len(sync)])
     if i - peaks[-1][0] >= rate / 2:
         peaks.append((i, edge))
+        
     elif edge > peaks[-1][1]:
         peaks[-1] = (i, edge)
 
